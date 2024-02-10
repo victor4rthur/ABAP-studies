@@ -32,7 +32,7 @@ INITIALIZATION.
 
   p_local = 'Teste de preenchimento antes da tela.'.
 
-AT SELECTION-SCREEN OUTPUT. " Evento de saída da tela de seleção
+AT SELECTION-SCREEN OUTPUT. " Evento de saÃ­da da tela de seleÃ§Ã£o
 
 *  Check if ratio button is seleted
 *  Local

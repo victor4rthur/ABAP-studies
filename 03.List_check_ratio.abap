@@ -47,6 +47,6 @@ SELECTION-SCREEN END OF BLOCK b1.
 INITIALIZATION.
 
   text1 = 'Dados do Material'.         " Initializing title for Material Data block
-  text2 = 'SeleÁ„o bin·ria'.            " Initializing title for Binary Selection block
-  text3 = 'MultiseleÁ„o'.               " Initializing title for Multi-Selection block
-  text4 = 'SeleÁ„o de lista'.           " Initializing title for Listbox Selection block
+  text2 = 'Sele√ß√£o bin√°ria'.            " Initializing title for Binary Selection block
+  text3 = 'Multisele√ß√£o'.               " Initializing title for Multi-Selection block
+  text4 = 'Sele√ß√£o de lista'.           " Initializing title for Listbox Selection block

@@ -1,14 +1,14 @@
 *&---------------------------------------------------------------------*
 *& Report Z_AD_AULA7_2
 *&---------------------------------------------------------------------*
-*& Este È um programa simples que realiza o upload de um arquivo CSV   *
-*& e exibe os campos resultantes apÛs a divis„o (split) das linhas do   *
+*& Este √© um programa simples que realiza o upload de um arquivo CSV   *
+*& e exibe os campos resultantes ap√≥s a divis√£o (split) das linhas do   *
 *& arquivo.                                                            *
 *&---------------------------------------------------------------------*
 REPORT z_ad_aula7_2.
 
 *---------------------------------------------------------------------*
-* DeclaraÁ„o do tipo de dados "ty_arquivo" que representa uma linha   *
+* Declara√ß√£o do tipo de dados "ty_arquivo" que representa uma linha   *
 * de um arquivo com um campo de 500 caracteres.                       *
 *---------------------------------------------------------------------*
 TYPES: BEGIN OF ty_arquivo,
@@ -16,7 +16,7 @@ TYPES: BEGIN OF ty_arquivo,
        END OF ty_arquivo.
 
 *---------------------------------------------------------------------*
-* DeclaraÁ„o do tipo de dados "ty_convert" para armazenar os campos   *
+* Declara√ß√£o do tipo de dados "ty_convert" para armazenar os campos   *
 * convertidos do arquivo.                                             *
 *---------------------------------------------------------------------*
 TYPES: BEGIN OF ty_convert,
@@ -32,7 +32,7 @@ TYPES: BEGIN OF ty_convert,
          campo10(13) TYPE c,
        END OF ty_convert.
 *---------------------------------------------------------------------*
-* DeclaraÁ„o de vari·veis: tabela interna, ·rea de trabalho e nome do *
+* Declara√ß√£o de vari√°veis: tabela interna, √°rea de trabalho e nome do *
 * arquivo.                                                            *
 *---------------------------------------------------------------------*
 DATA: t_arquivo  TYPE TABLE OF ty_arquivo,
@@ -43,7 +43,7 @@ DATA: t_convert TYPE TABLE OF ty_convert,
       w_convert TYPE ty_convert.
 
 *---------------------------------------------------------------------*
-* Tela de seleÁ„o: Bloco 'b1' com um campo para o nome do arquivo.    *
+* Tela de sele√ß√£o: Bloco 'b1' com um campo para o nome do arquivo.    *
 *---------------------------------------------------------------------*
 SELECTION-SCREEN: BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
 PARAMETERS: p_file TYPE rlgrap-filename.
@@ -55,7 +55,7 @@ AT SELECTION-SCREEN OUTPUT.
   p_down = p_file.
 
 *---------------------------------------------------------------------*
-* Tratamento de evento: Ao pressionar F4 no campo de seleÁ„o de arquivo*
+* Tratamento de evento: Ao pressionar F4 no campo de sele√ß√£o de arquivo*
 *---------------------------------------------------------------------*
 AT SELECTION-SCREEN ON VALUE-REQUEST FOR p_file.
 
@@ -67,7 +67,7 @@ AT SELECTION-SCREEN ON VALUE-REQUEST FOR p_file.
       file_name     = p_file.
 
 *---------------------------------------------------------------------*
-* InÌcio da execuÁ„o do programa. Chamada do formul·rio para upload do *
+* In√≠cio da execu√ß√£o do programa. Chamada do formul√°rio para upload do *
 * arquivo.                                                             *
 *---------------------------------------------------------------------*
 START-OF-SELECTION.
@@ -91,7 +91,7 @@ FORM f_upload_file .
   v_file = p_file.
 
 *---------------------------------------------------------------------*
-* Chama a funÁ„o para realizar o upload do arquivo para a tabela      *
+* Chama a fun√ß√£o para realizar o upload do arquivo para a tabela      *
 * interna "t_arquivo".                                                *
 *---------------------------------------------------------------------*
   CALL FUNCTION 'GUI_UPLOAD'
@@ -102,7 +102,7 @@ FORM f_upload_file .
       data_tab = t_arquivo.
 
 *---------------------------------------------------------------------*
-* Loop para processar cada linha do arquivo e realizar a convers„o    *
+* Loop para processar cada linha do arquivo e realizar a convers√£o    *
 * dos campos separados por ';'.                                      *
 *---------------------------------------------------------------------*
   LOOP AT t_arquivo INTO wa_arquivo.
@@ -129,14 +129,14 @@ FORM f_upload_file .
                w_convert-campo9   USING '01',
                w_convert-campo10  USING '02'.
 *---------------------------------------------------------------------*
-* Verifica se a operaÁ„o de split foi bem-sucedida e, se sim, adiciona *
-* a linha convertida ‡ tabela interna "lt_convert".                   *
+* Verifica se a opera√ß√£o de split foi bem-sucedida e, se sim, adiciona *
+* a linha convertida √† tabela interna "lt_convert".                   *
 *---------------------------------------------------------------------*
 
     APPEND w_convert TO t_convert.
 
 *---------------------------------------------------------------------*
-* Exibe os valores dos campos apÛs o split na tela.                   *
+* Exibe os valores dos campos ap√≥s o split na tela.                   *
 *---------------------------------------------------------------------*
     WRITE: / 'Campo 1:', w_convert-campo1,
            / 'Campo 2:', w_convert-campo2,

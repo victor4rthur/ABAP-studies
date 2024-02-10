@@ -24,13 +24,13 @@ DATA: t_mara TYPE TABLE OF ty_mara,
       w_mara TYPE ty_mara.
 
 *--------------------------------------------------------------------*
-* Tela de seleÁ„o
+* Tela de sele√ß√£o
 *This SELECT statement retrieves at most one row (UP TO 1 rows) from the mara table where the material number matches the user input (p_matnr).
 *The result is stored in the internal table t_mara.
 *--------------------------------------------------------------------*
 PARAMETERS: p_matnr TYPE mara-matnr.
 
-"N„o perform·tico pois selectiona todas as colunas e sÛ usa uma.
+"N√£o perform√°tico pois selectiona todas as colunas e s√≥ usa uma.
 *SELECT *
 *FROM mara
 *INTO TABLE t_mara

@@ -30,14 +30,14 @@ DATA: t_saida TYPE TABLE OF ty_saida,  " Internal Table for Custom Output
       t_makt  TYPE TABLE OF makt.     " Internal Table for Material Descriptions
 
 *--------------------------------------------------------------------*
-"Tela de seleção
+"Tela de seleÃ§Ã£o
 *--------------------------------------------------------------------*
 SELECTION-SCREEN: BEGIN OF BLOCK b1 WITH FRAME TITLE TEXT-001.
 SELECT-OPTIONS: s_ebeln FOR ekko-ebeln.  " Selection Screen for Purchase Order Number
 SELECTION-SCREEN: END OF BLOCK b1.
 
-START-OF-SELECTION. "início da lógica principal
-  "Seleção de dados
+START-OF-SELECTION. "inÃ­cio da lÃ³gica principal
+  "SeleÃ§Ã£o de dados
   PERFORM f_selecao_de_dados.   " Perform data selection
   PERFORM  f_monta_dados.        " Perform data assembly
   PERFORM f_exibe_dados.         " Perform data display
@@ -110,7 +110,7 @@ FORM f_monta_dados .
       ENDIF.
 
       IF wa_saida-maktx IS INITIAL.
-        wa_saida-maktx = 'Sem Descrição.'.
+        wa_saida-maktx = 'Sem DescriÃ§Ã£o.'.
       ENDIF.
 
       APPEND wa_saida TO t_saida.
@@ -132,11 +132,11 @@ FORM f_exibe_dados .
 *    WRITE: / '|', 'Pedido:',                wa_saida-ebeln,
 *           / '|', 'Item:',                  wa_saida-ebelp,
 *           / '|', 'Material:',              wa_saida-matnr,
-*           / '|', 'Descrição do Material:', wa_saida-maktx.
+*           / '|', 'DescriÃ§Ã£o do Material:', wa_saida-maktx.
 *  ENDLOOP.
 
   "other way
-  WRITE: / ,'|', 'Pedido:   ', '|','|','Item:','|','|','Material:         ','|','|','Descrição do Material:'.
+  WRITE: / ,'|', 'Pedido:   ', '|','|','Item:','|','|','Material:         ','|','|','DescriÃ§Ã£o do Material:'.
   LOOP AT t_saida INTO wa_saida.
     WRITE: / ,'|',wa_saida-ebeln,'|','|',wa_saida-ebelp,'|','|',wa_saida-matnr,'|','|',wa_saida-maktx,'|'.
   ENDLOOP.

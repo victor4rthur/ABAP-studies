@@ -16,21 +16,21 @@ DATA: wa_mara  TYPE mara,
       wa_makt  TYPE makt,
       wa_saida TYPE ty_saida.
 
-"Tela de seleção
+"Tela de seleÃ§Ã£o
 PARAMETERS: p_matnr TYPE mara-matnr.
 
 START-OF-SELECTION.
-  "Seleção de dados
+  "SeleÃ§Ã£o de dados
   SELECT SINGLE * "Seleciona todas as colunas da mara e coloca na wa_mara
          FROM mara
-         INTO wa_mara "Dados de seleçao baseados na tela
-         WHERE matnr EQ p_matnr. "A chave desta tabela é a própria matnr
+         INTO wa_mara "Dados de seleÃ§ao baseados na tela
+         WHERE matnr EQ p_matnr. "A chave desta tabela Ã© a prÃ³pria matnr
 
   IF sy-subrc EQ 0.
     SELECT SINGLE * "Seleciona todas as colunas da makt e coloca na wa_mara
             FROM makt
             INTO wa_makt
-            WHERE matnr EQ p_matnr AND spras = 'PT'. "A chave da tabela é o campo que retorna apenas uma linha.
+            WHERE matnr EQ p_matnr AND spras = 'PT'. "A chave da tabela Ã© o campo que retorna apenas uma linha.
 
     IF sy-subrc EQ 0.
       wa_saida-matnr = wa_mara-matnr. "O campo matnr da Wa_saida recebe o campo matnr da wa_mara.

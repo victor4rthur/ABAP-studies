@@ -5,11 +5,11 @@
 *&---------------------------------------------------------------------*
 REPORT z_ad_aula4.
 
-*DATA: v_variavel_1       TYPE c,                        "Declaro que a vari·vel v_vari·vel_1 È do tipo c
-*      v_variavel_2(11)   TYPE c,                        "Declaro que a vari·vel v_vari·vel_2 È do tipo c e possui 11 espaÁos
-*      v_variavel_3       TYPE mara-matnr,               "Declaro que a vari·vel v_vari·vel_3 È do tipo especÌfico
-*      v_variavel_4       TYPE n,                        "NumÈrica
-*      v_variavel_4_2(10) TYPE n,                        "NumÈrica
+*DATA: v_variavel_1       TYPE c,                        "Declaro que a vari√°vel v_vari√°vel_1 √© do tipo c
+*      v_variavel_2(11)   TYPE c,                        "Declaro que a vari√°vel v_vari√°vel_2 √© do tipo c e possui 11 espa√ßos
+*      v_variavel_3       TYPE mara-matnr,               "Declaro que a vari√°vel v_vari√°vel_3 √© do tipo espec√≠fico
+*      v_variavel_4       TYPE n,                        "Num√©rica
+*      v_variavel_4_2(10) TYPE n,                        "Num√©rica
 *      v_variavel_5       TYPE p DECIMALS 2,             "Valor com decimais
 *      v_variavel_6       TYPE d,                        "Data
 *      v_variavel_7       TYPE t,                        "Hora

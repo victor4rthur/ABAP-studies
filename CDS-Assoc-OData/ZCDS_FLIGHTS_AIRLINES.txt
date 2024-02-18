@@ -1,0 +1,27 @@
+@AbapCatalog.sqlViewName: 'ZCDSFLIGHTAIR'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airlines and Flights CDS View'
+
+define view ZCDS_FLIGHTS_AIRLINES
+  as select from scarr    as Airlines
+    inner join   sflight  as Flights on Airlines.carrid = Flights.carrid
+    
+    
+    
+    association [1..*] to ZCDS_MEAL_FLIGHT as _meal_flight on  _meal_flight.airlineCode = $projection.airlineCode
+{
+  key Airlines.carrid   as airlineCode,
+  key Flights.connid    as flightConnection,
+  key Flights.fldate    as flightDate,
+
+      Airlines.carrname as airlineName,
+      Airlines.url      as airlineURL,
+      Flights.price     as flightPrice,
+      Flights.currency as flightCurrency,
+      
+   
+      //Associations
+      _meal_flight
+}

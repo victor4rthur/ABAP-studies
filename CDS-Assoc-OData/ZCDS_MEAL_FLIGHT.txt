@@ -1,0 +1,17 @@
+@AbapCatalog.sqlViewName: 'ZCDSMEALFLIGHT'
+@AbapCatalog.compiler.compareFilter: true
+@AbapCatalog.preserveKey: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Meals and flights CDS View'
+define view ZCDS_MEAL_FLIGHT
+  as select from smeal  as Meal
+    inner join   smealt as Description on Meal.carrid = Description.carrid and Meal.mealnumber = Description.mealnumber
+{
+  key Meal.carrid            as airlineCode,
+  key Description.mealnumber as mealNumber,
+      Description.text       as foodName,
+      Meal.mealtype          as foodType
+
+}
+where
+  Description.sprache = 'E'
